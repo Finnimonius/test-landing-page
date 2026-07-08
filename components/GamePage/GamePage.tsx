@@ -1,3 +1,10 @@
+import Header from "../Header/Header"
+
 export default function GamePage() {
-    return <></>
+    return (
+        <div>
+            <Header />
+            <main></main>
+        </div>
+    )
 }

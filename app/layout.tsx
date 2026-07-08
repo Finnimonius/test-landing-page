@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "../styles/globals.scss";
 
 const inter = localFont({
-  src: '../public/fonts/inter/InterVariable.woff2',
-  variable: '--font-inter',
-  weight: '100 900',
-})
+  src: "../public/fonts/inter/InterVariable.woff2",
+  variable: "--font-inter",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "game",
@@ -19,11 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ru"
-      className={inter.variable}
-    >
-      <body className="body">{children}</body>
+    <html lang="ru" className={inter.variable}>
+      <body className="body">
+        <AntdRegistry>{children}</AntdRegistry>
+      </body>
     </html>
   );
 }
