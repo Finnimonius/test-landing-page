@@ -3,10 +3,169 @@
 .header {
   border-bottom: 1px solid $border;
   background-color: $background;
+
+  &__logo {
+    display: flex;
+    margin-right: 50px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   &__block {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 56px;
     padding: 12px 0;
+  }
+
+  &__input {
+    border: 1px solid rgba(232, 235, 240, 0);
+    border-radius: $border-radius;
+    padding: 6px 40px;
+    width: 384px;
+    height: 32px;
+    margin-right: 114px;
+    backdrop-filter: blur(12px);
+    box-shadow:
+      0 0 0 1px rgba(17, 38, 66, 0.08),
+      0 1px 2px 0 rgba(153, 161, 176, 0.16);
+    background: $background;
+    background-image: url("../../public/images/find_icon.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 16px 16px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #36394a;
+    outline: none;
+    transition: $transition;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: $font-size-sm;
+      line-height: 143%;
+      color: $text-secondary;
+      letter-spacing: 0.55px;
+      transition: color $transition;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: $text-primary;
+      }
+    }
+
+    &:active {
+      box-shadow:
+        0 0 0 1px rgba(17, 38, 66, 0.16),
+        0 1px 2px 0 rgba(153, 161, 176, 0.24);
+      &::placeholder {
+        color: $text-primary;
+      }
+    }
+
+    &:focus {
+      box-shadow:
+        0 0 0 1px rgba(17, 38, 66, 0.16),
+        0 1px 2px 0 rgba(153, 161, 176, 0.24);
+      &::placeholder {
+        color: $text-primary;
+      }
+    }
+  }
+
+  &__dropdowns {
+    display: flex;
+    gap: 16px;
+    margin-right: 24px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__entrance {
+    font-weight: 500;
+    font-size: $font-size-sm;
+    line-height: 143%;
+    text-align: center;
+    color: $text-primary;
+    border-radius: $border-radius;
+    padding: 4px 12px;
+    width: 58px;
+    height: 32px;
+    box-shadow:
+      0 0 0 1px rgba(18, 55, 105, 0.08),
+      0 1px 2px 0 rgba(164, 172, 185, 0.24);
+    transition: $transition;
+    background: $background;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+      $background;
+
+    &:hover {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        #fafafa;
+    }
+
+    &:focus {
+      outline: none;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        #fafafa;
+    }
+
+    &:active {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        $background;
+      opacity: 0.4;
+    }
+  }
+
+  &__registration {
+    font-weight: 500;
+    font-size: $font-size-sm;
+    line-height: 143%;
+    text-align: center;
+    color: #fff;
+    border-radius: $border-radius;
+    padding: 4px 12px;
+    width: 114px;
+    height: 32px;
+    box-shadow:
+      0 0 0 1px #4665d2,
+      0 1px 2px 0 rgba(57, 89, 204, 0.5);
+    background: $primary;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+      $primary;
+    transition: $transition;
+
+    &:hover {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        darken($primary, 15%);
+    }
+
+    &:focus {
+      outline: none;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        darken($primary, 15%);
+    }
+
+    &:active {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        $primary;
+      opacity: 0.4;
+    }
   }
 }

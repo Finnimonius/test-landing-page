@@ -23,11 +23,27 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.header__block}>
-          <Link href="/">
-            <Image src="/images/logo.png" alt="Логотип Starvell" width={118} height={24}/>
+          <Link href="/" className={styles.header__logo}>
+            <Image src="/images/logo.png" alt="Логотип Starvell" width={118} height={24} />
           </Link>
-          <input type="text" placeholder="Поиск игр и приложений"/>
-          <DropdownMenu text="Поддержка" items={items}/>
+          <input
+            className={styles.header__input}
+            type="text"
+            placeholder="Поиск игр и приложений..."
+          />
+          <div className={styles.header__dropdowns}>
+            <DropdownMenu text="Поддержка" items={items} />
+            <DropdownMenu text="Русский" items={items} />
+            <DropdownMenu text="RUB" items={items} />
+          </div>
+          <div className={styles.header__buttons}>
+            <button className={styles.header__entrance}>
+                Вход
+            </button>
+            <button className={styles.header__registration}>
+                Регистрация
+            </button>
+          </div>
         </div>
       </div>
     </header>

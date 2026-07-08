@@ -23,6 +23,7 @@ export default function DropdownMenu({ text, items }: Props) {
         open={isOpen}
         onOpenChange={setIsOpen}
         trigger={['hover']} 
+        placement="bottomRight"
       >
         <a onClick={(e) => e.preventDefault()} className={styles.trigger}>
           <span className={`${styles.text} ${isOpen ? styles.textOpen : ''}`}>

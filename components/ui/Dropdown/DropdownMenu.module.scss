@@ -32,7 +32,6 @@
 }
 
 .dropdownList {
-  // Стили для выпадающего списка
   border: 1px solid #e8ebf0 !important;
   border-radius: 8px !important;
   padding: 4px !important;
@@ -62,17 +61,16 @@
   text-decoration: none;
   transition: all $transition;
   
-  // Ховер на весь триггер
   &:hover {
     .text {
-      color: #36394a; // <-- Меняем цвет текста
+      color: #36394a; 
     }
     
     .arrow {
-      transform: rotate(180deg); // <-- Переворачиваем стрелку
+      transform: rotate(180deg); 
       
       path {
-        stroke: #36394a; // <-- Меняем цвет стрелки (опционально)
+        stroke: #36394a; 
       }
     }
   }
@@ -87,12 +85,10 @@
   white-space: nowrap;
   transition: color $transition;
   
-  // Состояние, когда меню открыто
   &.textOpen {
     color: #36394a;
   }
   
-  // Ховер на триггер
   .trigger:hover & {
     color: #36394a;
   }
@@ -107,7 +103,6 @@
     transition: stroke $transition;
   }
   
-  // Состояние, когда меню открыто
   &.arrowOpen {
     transform: rotate(180deg);
     
@@ -116,7 +111,6 @@
     }
   }
   
-  // Ховер на триггер
   .trigger:hover & {
     transform: rotate(180deg);
     
