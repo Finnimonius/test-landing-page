@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./Header.module.scss";
 import Image from "next/image";
-import DropdownMenu from "../ui/Dropdown/DropdownMenu";
+import DropdownMenu from "../ui/DropdownMenu/DropdownMenu";
 
 const items = [
   {

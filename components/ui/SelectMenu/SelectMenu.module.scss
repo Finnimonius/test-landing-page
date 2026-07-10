@@ -1,0 +1,113 @@
+@use "../../../styles/variables" as *;
+
+.customSelect {
+  width: 168px !important;
+  height: 36px !important;
+  letter-spacing: 0.5px !important;
+
+  :global(.ant-select-selector) {
+    border: 1px solid #e8ebf0 !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    height: 36px !important;
+    background: #fff !important;
+    transition: all $transition !important;
+
+    &:hover {
+      border-color: #e8ebf0 !important;
+    }
+  }
+
+  &:global(.ant-select-open) {
+    :global(.ant-select-selector) {
+      background: #f7f7f7 !important;
+      border-color: #e8ebf0 !important;
+      box-shadow: none !important;
+    }
+
+    :global(.ant-select-selection-item) {
+      color: #9e9da4 !important;
+    }
+  }
+
+  :global(.ant-select-selection-item) {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 143% !important;
+    color: #36394a !important;
+    font-family: var(--font-inter), sans-serif !important;
+  }
+
+  &:global(.ant-select-focused) {
+    :global(.ant-select-selector) {
+      border-color: #e8ebf0 !important;
+      box-shadow: none !important;
+    }
+  }
+
+  :global(.ant-select-selection-placeholder) {
+    display: none !important;
+  }
+
+  :global(.ant-select-arrow) {
+    display: none !important;
+  }
+}
+
+.customDropdown {
+  :global(.ant-select-dropdown) {
+    border: 1px solid #e8ebf0 !important;
+    border-radius: 8px !important;
+    padding: 4px !important;
+    min-width: 168px !important;
+    max-height: 164px !important;
+    box-shadow: 0 16px 32px -12px rgba(14, 18, 27, 0.1) !important;
+    background: #fff !important;
+  }
+
+  :global(.ant-select-item) {
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    font-family: var(--font-inter), sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 143% !important;
+    color: #36394a !important;
+    transition: all $transition;
+
+    &:hover {
+      background: #f7f7f7 !important;
+    }
+  }
+
+  :global(.ant-select-item-option-active) {
+    background: #f7f7f7 !important;
+  }
+
+  :global(.ant-select-item-option-selected) {
+    background: #f7f7f7 !important;
+    font-weight: 500 !important;
+  }
+}
+
+.arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform $transition;
+
+  path {
+    stroke: #666d80;
+    transition: stroke $transition;
+  }
+
+  &.arrowOpen {
+    transform: translateY(-50%) rotate(180deg);
+
+    path {
+      stroke: #36394a;
+    }
+  }
+}
