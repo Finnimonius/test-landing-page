@@ -9,7 +9,6 @@
   border-radius: 16px;
   padding: 40px 0;
   max-width: 1256px;
-  height: 2443px;
   background: #fff;
   margin: 0 auto;
   background-image: url("../../public/images/hero_back.png");
@@ -91,6 +90,7 @@
   &__box {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 8px;
   }
 
   &__active {
@@ -133,5 +133,94 @@
       0 1px 2px 0 rgba(57, 89, 204, 0.5);
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%), #4e75ff;
+  }
+
+  &__filterElems {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 27px;
+  }
+
+  &__online {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e8ebf0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    height: 36px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #36394a;
+  }
+
+  &__delivery {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e8ebf0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    height: 36px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #36394a;
+  }
+
+  &__onlineText {
+    margin-right: 8px;
+  }
+
+  &__diliveryText {
+    margin-right: 8px;
+    padding-left: 6px;
+  }
+
+  &__findLot {
+    border: 1px solid #e8ebf0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: 317px;
+    height: 36px;
+    margin-right: 114px;
+    backdrop-filter: blur(12px);
+    background: $background;
+    background-image: url("../../public/images/find_icon.png");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px 16px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #36394a;
+    outline: none;
+    transition: $transition;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: $font-size-sm;
+      line-height: 143%;
+      color: #9e9da4;
+      letter-spacing: 0.55px;
+      transition: color $transition;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: $text-primary;
+      }
+    }
+
+    &:active {
+      &::placeholder {
+        color: $text-primary;
+      }
+    }
+
+    &:focus {
+      &::placeholder {
+        color: $text-primary;
+      }
+    }
   }
 }

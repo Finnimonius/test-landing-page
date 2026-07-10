@@ -1,0 +1,199 @@
+@use "../../styles/variables" as *;
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-inter), sans-serif;
+  table-layout: fixed;
+
+  thead {
+    th {
+      padding: 4px 0 4px 0;
+      text-align: left;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: #6e7076;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #f0f2f5;
+      transition: background $transition;
+
+      &:hover {
+        background: #f8f9fc;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    td {
+      padding: 16px 0;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 143%;
+      color: #36394a;
+    }
+  }
+}
+
+.thDescription {
+  width: 640px;
+}
+
+.thSeller {
+  width: 298px;
+}
+
+.thAvailability {
+  width: 62px;
+  text-align: right;
+  padding-right: 0 !important;
+}
+
+.thPrice {
+  width: auto;
+  text-align: right !important;
+}
+
+.cellDescription {
+  font-weight: 400;
+  color: #36394a;
+  white-space: normal;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cellSeller {
+  width: 232px;
+}
+
+.cellAvailability {
+  width: 62px;
+  text-align: right;
+  padding-right: 0 !important;
+}
+
+.cellPrice {
+  text-align: right;
+}
+
+.sellerInfo {
+  display: flex;
+  align-items: start;
+  gap: 9px;
+}
+
+.avatarWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.onlineStatus {
+  position: absolute;
+  bottom: 3px;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+
+  &.online {
+    background: #22c55e;
+  }
+
+  &.offline {
+    background: #9ca3af;
+  }
+}
+
+.sellerDetails {
+  padding-top: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sellerNameRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.sellerName {
+  font-weight: 500;
+  color: #36394a;
+  white-space: nowrap;
+}
+
+.sellerMeta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #6e7076;
+  white-space: nowrap;
+}
+
+.availabilityValue {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: right;
+  color: #36394a;
+}
+
+.infinity {
+  font-size: 16px;
+  font-weight: 400;
+  color: #36394a;
+}
+
+.priceValue {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: right;
+  color: #36394a;
+  white-space: nowrap;
+}
+
+.thAvailability {
+  width: 62px;
+  text-align: right;
+  padding-right: 0 !important;
+}
+
+.thPrice {
+  width: auto;
+  text-align: right;
+  padding-right: 0 !important;
+}
+
+.headerContent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1px;
+  white-space: nowrap;
+  width: 100%;
+}

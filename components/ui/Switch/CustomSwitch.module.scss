@@ -1,0 +1,48 @@
+@use "../../../styles/variables" as *;
+
+.switch {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  transition: all $transition;
+  position: relative;
+
+  .track {
+    width: 100%;
+    background: #e8ebf0;
+    transition: all $transition;
+    position: relative;
+  }
+
+  .handle {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all $transition;
+  }
+
+  &.checked {
+    .track {
+      background: #5c80fd;
+    }
+  }
+
+  &:active {
+    .handle {
+      transform: scale(0.95);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #5c80fd;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

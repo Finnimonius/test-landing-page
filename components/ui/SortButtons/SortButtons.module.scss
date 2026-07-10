@@ -1,0 +1,50 @@
+@use "../../../styles/variables" as *;
+
+.sortButtons {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+  flex-shrink: 0;
+  margin-left: 3px;
+}
+
+.sortBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 8px;
+  margin: -3px 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all $transition;
+  line-height: 0;
+
+  svg {
+    display: block;
+    width: 10px;
+    height: 10px;
+    transition: all $transition;
+
+    path {
+      fill: #6e7076;
+      transition: fill $transition;
+    }
+  }
+
+  &:hover {
+    background: rgba(110, 112, 118, 0.08);
+
+    svg path {
+      fill: #36394a;
+    }
+  }
+
+  &:active {
+    transform: scale(0.85);
+  }
+}

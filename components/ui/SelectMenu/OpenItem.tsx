@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { Select, ConfigProvider } from "antd";
-import styles from "./SelectMenu.module.scss";
+import styles from "./OpenItem.module.scss";
 
 const handleChange = (value: string) => {
   console.log(`selected ${value}`);
 };
 
-export default function SelectMenu() {
+export default function OpenItem() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
