@@ -1,13 +1,17 @@
 @use "../../styles/variables" as *;
 
 .tableWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #e8ebf0;
   width: 100%;
   overflow-x: auto;
   background: #fff;
-  border-radius: 12px;
 }
 
 .table {
+  margin-bottom: 24px;
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-inter), sans-serif;
@@ -26,6 +30,7 @@
 
   tbody {
     tr {
+      cursor: pointer;
       border-bottom: 1px solid #f0f2f5;
       transition: background $transition;
 
@@ -39,7 +44,7 @@
     }
 
     td {
-      padding: 16px 0;
+      padding: 16px 0 14px 0;
       vertical-align: top;
       font-size: 14px;
       line-height: 143%;
@@ -68,12 +73,12 @@
 }
 
 .cellDescription {
-  font-weight: 400;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 150% !important;
   color: #36394a;
   white-space: normal;
   word-break: break-word;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .cellSeller {
@@ -125,10 +130,9 @@
 }
 
 .sellerDetails {
-  padding-top: 2px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   min-width: 0;
 }
 
@@ -141,6 +145,8 @@
 
 .sellerName {
   font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
   color: #36394a;
   white-space: nowrap;
 }
@@ -196,4 +202,43 @@
   gap: 1px;
   white-space: nowrap;
   width: 100%;
+}
+
+.moreViews {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #36394a;
+  border-radius: 8px;
+  padding: 4px 12px;
+  width: 99.8%;
+  z-index: 2;
+  height: 40px;
+  box-shadow:
+    0 0 0 1px rgba(18, 55, 105, 0.08),
+    0 1px 2px 0 rgba(164, 172, 185, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%), #fff;
+
+  transition: $transition;
+
+  &:hover {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%), #fafafa;
+  }
+
+  &:focus {
+    outline: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%), #fafafa;
+  }
+
+  &:active {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+      $background;
+    opacity: 0.4;
+  }
 }

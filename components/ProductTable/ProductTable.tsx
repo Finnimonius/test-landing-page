@@ -17,6 +17,7 @@ const productsData = [
       date: 3,
       dateUnit: "года",
       reviewsNum: 4288,
+      reviewsUnit: "отзывов",
     },
     availability: 322,
     price: 0.64,
@@ -32,6 +33,7 @@ const productsData = [
       date: 1,
       dateUnit: "год",
       reviewsNum: 45,
+      reviewsUnit: "отзывов",
     },
     availability: "∞",
     price: 0.63,
@@ -41,16 +43,84 @@ const productsData = [
     title:
       "🤲Куплю и пройду рейд БУДДЫ - БУДДА РЕЙД - БУДА - место будды - Рейды буды - BUDDHA RAID - 🤲, Услуги",
     seller: {
-      icon: "/images/seller2.png",
+      icon: "/images/seller3.png",
       name: "Dendi",
       online: false,
       rating: 5,
       date: 2,
       dateUnit: "дня",
       reviewsNum: 4,
+      reviewsUnit: "отзыва",
     },
     availability: 4556,
     price: 0.6,
+  },
+  {
+    id: 4,
+    title:
+      "🍩 / Рейд Теста - Куплю и пройду рейд Теста - РЕЙДЫ ТЕСТА - МЕСТО ТЕСТА - ДОУЧ - 🍩, Услуги",
+    seller: {
+      icon: "/images/seller4.png",
+      name: "qewbie",
+      online: true,
+      rating: 1,
+      date: 5,
+      dateUnit: "лет",
+      reviewsNum: 200,
+      reviewsUnit: "отзывов",
+    },
+    availability: 15666,
+    price: 0.55,
+  },
+  {
+    id: 5,
+    title:
+      "💛Фрукт Будда 💛 🟡Buddha Fruit🟡, Предметы, Трейд",
+    seller: {
+      icon: "/images/seller4.png",
+      name: "qewbie",
+      online: true,
+      rating: 3,
+      date: 5,
+      dateUnit: "лет",
+      reviewsNum: 104242,
+      reviewsUnit: "отзывов",
+    },
+    availability: 15666,
+    price: 0.55,
+  },
+  {
+    id: 6,
+    title:
+      "🧠spirit fruit | Спирит | фрукт Спирит🧠, Предметы, Трейд",
+    seller: {
+      icon: "/images/seller1.png",
+      name: "0xHearts.com",
+      online: true,
+      rating: 4.9,
+      date: 3,
+      dateUnit: "года",
+      reviewsNum: 4288,
+      reviewsUnit: "отзывов",
+    },
+    availability: 322,
+    price: 0.64,
+  },{
+    id: 7,
+    title:
+      "🟦Rumble Fruit🟦Фрукт Грохот, Предметы, Трейд",
+    seller: {
+      icon: "/images/seller2.png",
+      name: "IgorDun4enkoff",
+      online: true,
+      rating: 2.1,
+      date: 1,
+      dateUnit: "год",
+      reviewsNum: 45,
+      reviewsUnit: "отзывов",
+    },
+    availability: "∞",
+    price: 0.63,
   },
 ];
 
@@ -109,7 +179,9 @@ export default function ProductTable() {
                       <span>
                         {product.seller.date} {product.seller.dateUnit} на сайте,
                       </span>
-                      <span>{product.seller.reviewsNum} отзывов</span>
+                      <span>
+                        {product.seller.reviewsNum} {product.seller.reviewsUnit}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -132,6 +204,7 @@ export default function ProductTable() {
           ))}
         </tbody>
       </table>
+      <button className={styles.moreViews}>Показать больше предложений</button>
     </div>
   );
 }

@@ -1,0 +1,119 @@
+@import "../../styles/variables";
+
+.footer {
+  border-top: 1px solid $border;
+  background-color: $background;
+
+  &__block {
+    width: 100%;
+    display: flex;
+    padding: 30px 0 44px 0;
+    justify-content: space-between;
+  }
+
+  &__box {
+    display: flex;
+    gap: 88px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    max-width: 296px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #6e7076;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #33363e;
+    margin-bottom: 8px;
+  }
+
+  &__item {
+    &:focus {
+        outline: none;
+    }
+  }
+
+  &__logo {
+    &:focus {
+        outline: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #6e7076;
+  }
+
+  &__socialList {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__socialItem {
+    line-height: 0;
+  }
+
+  &__socialLink {
+    display: block;
+    width: 44px;
+    height: 44px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+
+    &:hover {
+      transform: translateY(-4px) scale(1.1);
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &:focus {
+      outline: none;
+      transform: translateY(-4px) scale(1.1);
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+    }
+  }
+
+  &__socialIcon {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &Telegram {
+      background-image: url("/images/icon-telegram.png");
+    }
+
+    &Discord {
+      background-image: url("/images/icon-discord.png");
+    }
+
+    &Vk {
+      background-image: url("/images/icon-vk.png");
+    }
+
+    &Youtube {
+      background-image: url("/images/icon-you.png");
+    }
+  }
+}

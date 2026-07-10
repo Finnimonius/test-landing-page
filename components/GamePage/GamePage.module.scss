@@ -2,6 +2,7 @@
 
 .main {
   padding-top: 24px;
+  margin-bottom: 25px;
 }
 
 .offers {
@@ -65,6 +66,24 @@
     letter-spacing: 0.06px;
     height: 32px;
     background: rgba(92, 128, 253, 0.08);
+    transition: $transition;
+
+    &:hover {
+      background: rgba(92, 128, 253, 0.2);
+    }
+
+    &:active {
+      background: #5c80fd;
+      color: #fff;
+
+      .offers__nums {
+        color: #fff;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__nums {
@@ -75,6 +94,7 @@
     letter-spacing: 0.08em;
     text-align: center;
     color: #5c80fd;
+    transition: $transition;
   }
 
   &__goods {
@@ -103,6 +123,27 @@
     padding: 4px 12px;
     height: 36px;
     background: #5c80fd;
+    transition: $transition;
+
+    &:hover {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        darken($primary, 15%);
+    }
+
+    &:focus {
+      outline: none;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        darken($primary, 15%);
+    }
+
+    &:active {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        $primary;
+      opacity: 0.4;
+    }
   }
 
   &__unactive {
@@ -116,6 +157,21 @@
     height: 36px;
     letter-spacing: 0.17px;
     background: rgba(92, 128, 253, 0.08);
+
+    transition: $transition;
+
+    &:hover {
+      background: rgba(92, 128, 253, 0.2);
+    }
+
+    &:active {
+      background: #5c80fd;
+      color: #fff;
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__popupBtn {
@@ -128,11 +184,32 @@
     padding: 8px 16px;
     width: 166px;
     height: 36px;
+    transition: $transition;
     box-shadow:
       0 0 0 1px #4665d2,
       0 1px 2px 0 rgba(57, 89, 204, 0.5);
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%), #4e75ff;
+
+    &:hover {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        darken($primary, 15%);
+    }
+
+    &:focus {
+      outline: none;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        darken($primary, 15%);
+    }
+
+    &:active {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+        $primary;
+      opacity: 0.4;
+    }
   }
 
   &__filterElems {
@@ -222,5 +299,55 @@
         color: $text-primary;
       }
     }
+  }
+
+  &__info {
+    padding-top: 24px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #6e7076;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+      position: relative;
+      padding-left: 21px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: #6e7076;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 8px;
+        top: 0px;
+        font-size: 13px;
+        color: #6e7076;
+        line-height: 1.5;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__descrLeft {
+    padding-left: 5px;
   }
 }

@@ -4,19 +4,51 @@ import { useState } from "react";
 import { Select, ConfigProvider } from "antd";
 import styles from "./OpenItem.module.scss";
 
-const handleChange = (value: string) => {
-  console.log(`selected ${value}`);
-};
+interface OpenItemProps {
+  width?: number | string;
+  height?: number | string;
+  placeholder?: string;
+  placeholderColor?: string;
+  options?: { value: string; label: string }[];
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+  fontSz?: number
+}
 
-export default function OpenItem() {
+const defaultOptions = [
+  { value: "Пункт меню 1", label: "Пункт меню 1" },
+  { value: "Пункт меню 2", label: "Пункт меню 2" },
+  { value: "Пункт меню 3", label: "Пункт меню 3" },
+];
+
+export default function OpenItem({
+  width = 168,
+  height = 36,
+  placeholder = "Способ доставки",
+  placeholderColor = "#9e9da4",
+  options = defaultOptions,
+  defaultValue,
+  onChange,
+  fontSz = 14
+}: OpenItemProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleChange = (value: string) => {
+    console.log(`selected ${value}`);
+    onChange?.(value);
+  };
+
+  // Преобразуем размеры в строку с px
+  const widthPx = typeof width === 'number' ? `${width}px` : width;
+  const heightPx = typeof height === 'number' ? `${height}px` : height;
 
   return (
     <ConfigProvider
       theme={{
         token: {
+          colorTextPlaceholder: placeholderColor,
           colorText: '#36394a',
-          fontSize: 14,
+          fontSize: fontSz,
         },
         components: {
           Select: {
@@ -34,17 +66,18 @@ export default function OpenItem() {
       }}
     >
       <Select
-        defaultValue="Способ доставки"
+        defaultValue={defaultValue}
+        placeholder={placeholder} 
         className={styles.customSelect}
-        popupClassName={styles.customDropdown}
+        // popupClassName={styles.customDropdown}
         onChange={handleChange}
         open={isOpen}
         onOpenChange={setIsOpen}
-        options={[
-          { value: "Пункт меню 1", label: "Пункт меню 1" },
-          { value: "Пункт меню 2", label: "Пункт меню 2" },
-          { value: "Пункт меню 3", label: "Пункт меню 3" },
-        ]}
+        options={options}
+        style={{ 
+          width: widthPx, 
+          height: heightPx 
+        }}
         suffixIcon={
           <svg
             width="16"

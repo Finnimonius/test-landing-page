@@ -1,0 +1,304 @@
+@use "../../styles/variables" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.popup {
+  position: relative;
+  width: 488px;
+  height: 530px;
+  border: 1px solid #e8ebf0;
+  border-radius: 16px;
+  box-shadow: 0 16px 32px -12px rgba(14, 18, 27, 0.02);
+  background: #fff;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &.open {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: -0px;
+  right: -64px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #fff;
+  border-radius: 8px;
+  border: 0.75px solid #e8ebf0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 24px;
+    height: 24px;
+
+    path {
+      transition: stroke 0.3s ease;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    svg path {
+      stroke: #36394a;
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.content {
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.title {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  color: #36394a;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #6e7076;
+  margin-bottom: 4px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.textareaWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.area {
+  width: 100%;
+  min-height: 100px;
+  padding: 8px 10px;
+  border: 1px solid #e8ebf0;
+  border-radius: 8px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+  color: #36394a;
+  resize: vertical;
+  transition: all $transition;
+  outline: none;
+  background: #fff;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #9e9da4;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.error {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  }
+}
+
+.charCounter {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  color: #9e9da4;
+  user-select: none;
+  pointer-events: none;
+  transition: color $transition;
+
+  &.error {
+    color: #ef4444;
+  }
+}
+
+.dragger {
+  margin-bottom: 24px;
+}
+
+.draggerWrapper {
+  :global(.ant-upload-drag) {
+    border: 1px dashed #9e9da4 !important;
+    border-radius: 8px !important;
+    padding: 16px 27px !important;
+    width: 440px !important;
+    height: 116px !important;
+    background: transparent !important;
+    transition: all $transition !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    &:hover {
+      border-color: #5c80fd !important;
+      background: rgba(92, 128, 253, 0.04) !important;
+    }
+  }
+
+  &:hover {
+    :global(.ant-upload-drag) {
+      border-color: #9e9da4 !important;
+      background: transparent !important;
+    }
+  }
+
+  :global(.ant-upload-drag-icon) {
+    margin-bottom: 4px !important;
+
+    svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+  }
+
+  // Основной текст
+  :global(.ant-upload-text) {
+    font-family: var(--font-inter), sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 143% !important;
+    color: #36394a !important;
+    margin: 0 !important;
+  }
+
+  // Подсказка (форматы файлов)
+  :global(.ant-upload-hint) {
+    font-family: var(--font-inter), sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 143% !important;
+    color: #6e7076 !important;
+    margin: 0 !important;
+  }
+}
+
+.help {
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: 150%;
+  text-align: center;
+  color: $text-primary;
+  border-radius: 8px;
+  padding: 4px 12px;
+  width: 216px;
+  height: 40px;
+  box-shadow:
+    0 0 0 1px rgba(18, 55, 105, 0.08),
+    0 1px 2px 0 rgba(164, 172, 185, 0.24);
+  transition: $transition;
+  background: $background;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+    $background;
+
+  &:hover {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%), #fafafa;
+  }
+
+  &:focus {
+    outline: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%), #fafafa;
+  }
+
+  &:active {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+      $background;
+    opacity: 0.4;
+  }
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.report {
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: 150%;
+  text-align: center;
+  color: #fff;
+  border-radius: $border-radius;
+  padding: 4px 12px;
+  width: 216px;
+  height: 40px;
+  box-shadow:
+    0 0 0 1px #4665d2,
+    0 1px 2px 0 rgba(57, 89, 204, 0.5);
+  background: $primary;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%), $primary;
+  transition: $transition;
+
+  &:hover {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+      darken($primary, 15%);
+  }
+
+  &:focus {
+    outline: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+      darken($primary, 15%);
+  }
+
+  &:active {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(193, 199, 208, 0.02) 100%),
+      $primary;
+    opacity: 0.4;
+  }
+}
